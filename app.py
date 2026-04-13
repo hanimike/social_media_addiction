@@ -21,23 +21,21 @@ if st.checkbox("Show Raw Data"):
 st.dataframe(data)
     
     # Basic Info
-st.header("Info")
+st.header("\nInfo : ")
 st.write(data.info())
 
-st.header("Shape")
+st.header("\nShape of dataset:")
 st.write(data.shape)
 
-st.header("Columns")
+st.header("\nColumns names:")
 st.write(data.columns)
 
-st.header("Describe")
-st.write(data.describe())
 
-st.header("Shape")
-st.write(data.shape)
+st.header("First 5 rows:\n")
+st.write(data.head())
 
-st.header("Head")
-st.write(data.head(20))
-
-st.header("Tails")
+st.header("\nLast 10 rows")
 st.write(data.tail(10))
+
+st.header("\nStatistical summary:\n")
+st.write(data.describe())
