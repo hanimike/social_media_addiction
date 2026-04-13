@@ -1,10 +1,10 @@
-import streamlit as st 
-import pandas as pd 
+import streamlit as st
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import plotly.express as px 
+import plotly.express as px
 import seaborn as sns 
-from scipy import stats as st
+import scipy as sp
 
 st.title("Social Media Addiction")
 
@@ -14,32 +14,30 @@ data = pd.read_csv("social_media_addiction.csv")
 
 csv = data.to_csv(index=False)
 st.download_button( label="Download dataset as CSV", 
-                   data=csv, file_name="social_media_addiction.csv" )
+                   data=csv, file_name="social_media_addiction.csv", mime="text/csv" )
      # Show Data
 if st.checkbox("Show Raw Data"):
     st.subheader("Raw Data")
 st.dataframe(data)
     
     # Basic Info
-st.header("\nInfo:")
+st.header("Info")
 st.write(data.info())
 
-st.header("\nShape of dataset:")
+st.header("Shape")
 st.write(data.shape)
 
-st.header("\nColumns names:")
+st.header("Columns")
 st.write(data.columns)
 
-
-st.header("First 5 rows:")
-st.write(data.head())
-
-st.header("\nLast 10 rows:")
-st.write(data.tail(10))
-
-st.header("\nStatstistical Summary:\n")
+st.header("Describe")
 st.write(data.describe())
 
-st.header("DATA CLEANING(COLUMN FORMATTING)")
-data.columns = data.columns.str.lower().str.replace("","-")
-st.write(data.colums)
+st.header("Shape")
+st.write(data.shape)
+
+st.header("Head")
+st.write(data.head(20))
+
+st.header("Tails")
+st.write(data.tail(10))
