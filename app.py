@@ -10,11 +10,11 @@ st.title("Social Media Addiction")
 
     # Load Data
 st.header("Load Data")
-data = pd.read_csv("C:\Users\hanim\Desktop\Streamlit Projects\project_exam\social_media_addiction.csv")
+data = pd.read_csv("social_media_addiction.csv")
 
 csv = data.to_csv(index=False)
 st.download_button( label="Download dataset as CSV", 
-                   data=csv, file_name="social_media_addiction.csv", mime="text/csv" )
+                   data=csv, file_name="social_media_addiction.csv" )
      # Show Data
 if st.checkbox("Show Raw Data"):
     st.subheader("Raw Data")
