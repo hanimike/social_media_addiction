@@ -15,9 +15,11 @@ st.header("Load Data")
 data = pd.read_csv("social_media_addiction.csv")
 
 csv = data.to_csv(index=False)
-st.download_button( label="Download dataset as CSV", 
-                   data=csv, file_name="social_media_addiction.csv", mime="text/csv" )
-
+st.download_button(
+    label="Download dataset as CSV", 
+    data=csv, 
+    file_name="social_media_addiction.csv", 
+    mime="text/csv")
 
 # Show Data
 if st.checkbox("Show Raw Data"):
