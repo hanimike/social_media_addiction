@@ -10,6 +10,20 @@ import scipy as sp
 
 st.title("Social Media Addiction Analysis")
 
+st.markdown("""
+### Project Description
+This interactive app analyzes how **social media usage** affects **addiction, mental health, productivity, and FOMO (fear of missing out)**.  
+
+The dataset includes participants' daily usage time, addiction levels, mental health scores, and productivity loss.  
+Through **data cleaning, statistical summaries, and visualizations**, the app highlights key insights such as:
+- How increased usage relates to higher addiction levels
+- The impact of usage on mental health and productivity
+- Gender differences in usage 
+- Correlations between FOMO and addiction
+
+This project combines raw data exploration with engaging charts to tell a clear story about digital habits.
+""")
+
     # Load Data
 st.header("Load Data")
 data = pd.read_csv("social_media_addiction.csv")
@@ -31,7 +45,7 @@ st.header("Info:")
 st.write(data.info())
 
 st.header("Dataset Shape")
-st.write(data.shape)
+st.write(data.shape())
 
 st.header("Column Names")
 st.write(data.columns)
