@@ -44,8 +44,9 @@ st.dataframe(data)
 st.header("Info:")
 st.write(data.info())
 
+
 st.header("Dataset Shape")
-st.write(data.shape())
+st.write(data.shape)
 
 st.header("Column Names")
 st.write(data.columns)
