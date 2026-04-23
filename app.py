@@ -117,12 +117,16 @@ plt.title("Usage Time vs Mental Health")
 st.pyplot(plt)
 
 st.subheader("Box Plot:  Addiction By Gender")
-fig = px.box(data,
-             x="gender",
-             y="addiction_level",
-             color="gender",
-             title="Addiction Levels by Gender")
-
+order = ["Low", "Moderate", "Severe", "High"]
+data["addiction_level"] = pd.Categorical(
+    data["addiction_level"], categories=order, ordered=True)
+fig = px.box(
+    data,
+    x="gender",
+    y="addiction_level",
+    color="gender",
+    title="Addiction Levels by Gender",
+    category_orders={"addiction_level": order})
 st.plotly_chart(fig)
 
 st.subheader("Histogram :  Usage Distribution")
