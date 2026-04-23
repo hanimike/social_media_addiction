@@ -145,13 +145,14 @@ plt.title("Correlation Between Variables")
 st.pyplot(plt)
 
 st.subheader("Scatter Plot :  Fomo Vs Addiction")
-fig = px.scatter(data,
-                 x="fomo_score",
-                 y="addiction_level",
-                 color="gender",
-                 size="daily_usage_time_min",
-                 title="FOMO vs Addiction with Usage Insight")
-
+fig = px.scatter(
+    data,
+    x="fomo_score",
+    y="addiction_level",
+    color="gender",
+    size="daily_usage_time_min",
+    title="FOMO vs Addiction with Usage Insight",
+    category_orders={"addiction_level": order} )
 st.plotly_chart(fig)
 
 st.subheader("Scatter plot : Productivity Vs  Usage")
