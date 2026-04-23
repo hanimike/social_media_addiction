@@ -104,6 +104,8 @@ st.pyplot(plt)
 
 st.subheader("Scatter Plot :  Usage Vs Addiction")
 plt.figure(figsize=(6,4))
+order = ["Low", "Moderate", "Severe", "High"]
+data["addiction_level"] = pd.Categorical(data["addiction_level"], categories=order, ordered=True)
 sns.scatterplot(x="daily_usage_time_min", y="addiction_level", data=data)
 plt.title("Daily Usage Time vs Addiction Level")
 st.pyplot(plt)
